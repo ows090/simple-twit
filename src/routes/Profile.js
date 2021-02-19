@@ -1,12 +1,30 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { auth } from 'firebaseInstance';
-const Profile = () => {
+import { auth, db } from 'firebaseInstance';
+import Tweet from 'components/Tweet';
+const Profile = ({ user }) => {
     const history = useHistory();
+    const [myTweets, setMyTweets] = useState([]);
+    const getMyTweets = useCallback(async () => {
+        const fetchedTweets = [];
+        const querySnapshot = await db
+            .collection('tweets')
+            .where('userId', '==', user.uid)
+            .get();
+        querySnapshot.forEach((doc) => {
+            fetchedTweets.push({ id: doc.id, ...doc.data() });
+        });
+        setMyTweets(fetchedTweets);
+    }, [user.uid]);
     const logoutHandler = useCallback(async () => {
         await auth.signOut();
         history.replace('/');
     }, [history]);
+
+    useEffect(() => {
+        getMyTweets();
+    }, [getMyTweets]);
+
     return (
         <div>
             Profile
