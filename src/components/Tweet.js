@@ -48,16 +48,18 @@ const Tweet = ({ tweet, isMine }) => {
             }}
         >
             <h3>{tweet.content}</h3>
-            <div
-                style={{
-                    backgroundImage: `url(${tweet.imgUrl})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    width: '300px',
-                    height: '300px',
-                }}
-            ></div>
-            <div>{tweet.createdAt}</div>
+            {tweet.imgUrl && (
+                <div
+                    style={{
+                        backgroundImage: `url(${tweet.imgUrl})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        width: '300px',
+                        height: '300px',
+                    }}
+                ></div>
+            )}
+            <div>{tweet.userId}</div>
             {isMine && <button onClick={onDelete}>DELETE</button>}
             {isMine && !editMode && (
                 <button onClick={onToggleEditMode}>EDIT</button>

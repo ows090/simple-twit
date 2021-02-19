@@ -43,13 +43,19 @@ const Home = ({ user }) => {
                         'data_url'
                     );
                     imgUrl = await uploadTaskSnapshot.ref.getDownloadURL();
+                    await db.collection('tweets').add({
+                        content: tweet,
+                        createdAt: Date.now(),
+                        userId: user.uid,
+                        imgUrl,
+                    });
+                } else {
+                    await db.collection('tweets').add({
+                        content: tweet,
+                        createdAt: Date.now(),
+                        userId: user.uid,
+                    });
                 }
-                await db.collection('tweets').add({
-                    content: tweet,
-                    createdAt: Date.now(),
-                    imgUrl,
-                    userId: user.uid,
-                });
                 setTweet('');
                 setImgDataUrl(null);
             } catch (error) {
