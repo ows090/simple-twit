@@ -10,6 +10,7 @@ const Profile = ({ user }) => {
         const querySnapshot = await db
             .collection('tweets')
             .where('userId', '==', user.uid)
+            // .orderBy('createdAt')
             .get();
         querySnapshot.forEach((doc) => {
             fetchedTweets.push({ id: doc.id, ...doc.data() });
@@ -33,7 +34,7 @@ const Profile = ({ user }) => {
             </div>
             <div>
                 {myTweets.map((tweet) => (
-                    <Tweet tweet={tweet} isMine={true} />
+                    <Tweet key={tweet.id} tweet={tweet} isMine={true} />
                 ))}
             </div>
         </>
