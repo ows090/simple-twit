@@ -26,10 +26,17 @@ const Profile = ({ user }) => {
     }, [getMyTweets]);
 
     return (
-        <div>
-            Profile
-            <button onClick={logoutHandler}>logout</button>
-        </div>
+        <>
+            <div>
+                Profile
+                <button onClick={logoutHandler}>logout</button>
+            </div>
+            <div>
+                {myTweets.map((tweet) => (
+                    <Tweet tweet={tweet} isMine={true} />
+                ))}
+            </div>
+        </>
     );
 };
 
