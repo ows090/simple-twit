@@ -10,7 +10,7 @@ const Profile = ({ user }) => {
         const querySnapshot = await db
             .collection('tweets')
             .where('userId', '==', user.uid)
-            // .orderBy('createdAt')
+            .orderBy('createdAt', 'desc')
             .get();
         querySnapshot.forEach((doc) => {
             fetchedTweets.push({ id: doc.id, ...doc.data() });
