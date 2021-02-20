@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/ows090/simple-tweet/static/js/main.dcadc714.chunk.js",
-    "main.js.map": "/ows090/simple-tweet/static/js/main.dcadc714.chunk.js.map",
-    "runtime-main.js": "/ows090/simple-tweet/static/js/runtime-main.543a0c89.js",
-    "runtime-main.js.map": "/ows090/simple-tweet/static/js/runtime-main.543a0c89.js.map",
-    "static/js/2.f7f5c7d4.chunk.js": "/ows090/simple-tweet/static/js/2.f7f5c7d4.chunk.js",
-    "static/js/2.f7f5c7d4.chunk.js.map": "/ows090/simple-tweet/static/js/2.f7f5c7d4.chunk.js.map",
-    "index.html": "/ows090/simple-tweet/index.html",
-    "static/js/2.f7f5c7d4.chunk.js.LICENSE.txt": "/ows090/simple-tweet/static/js/2.f7f5c7d4.chunk.js.LICENSE.txt"
+    "main.js": "/simple-tweet/static/js/main.c9b2ea60.chunk.js",
+    "main.js.map": "/simple-tweet/static/js/main.c9b2ea60.chunk.js.map",
+    "runtime-main.js": "/simple-tweet/static/js/runtime-main.a95b3611.js",
+    "runtime-main.js.map": "/simple-tweet/static/js/runtime-main.a95b3611.js.map",
+    "static/js/2.ee3cfb2a.chunk.js": "/simple-tweet/static/js/2.ee3cfb2a.chunk.js",
+    "static/js/2.ee3cfb2a.chunk.js.map": "/simple-tweet/static/js/2.ee3cfb2a.chunk.js.map",
+    "index.html": "/simple-tweet/index.html",
+    "static/js/2.ee3cfb2a.chunk.js.LICENSE.txt": "/simple-tweet/static/js/2.ee3cfb2a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.543a0c89.js",
-    "static/js/2.f7f5c7d4.chunk.js",
-    "static/js/main.dcadc714.chunk.js"
+    "static/js/runtime-main.a95b3611.js",
+    "static/js/2.ee3cfb2a.chunk.js",
+    "static/js/main.c9b2ea60.chunk.js"
   ]
 }
