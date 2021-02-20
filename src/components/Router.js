@@ -4,10 +4,10 @@ import Auth from 'routes/Auth';
 import Home from 'routes/Home';
 import Profile from 'routes/Profile';
 import Navigation from 'components/Navigation';
-const Router = ({ isLoggedIn, user }) => {
+const Router = ({ isLoggedIn, user, refreshUser }) => {
     return (
         <BrowserRouter>
-            {isLoggedIn && <Navigation />}
+            {isLoggedIn && <Navigation user={user}/>}
             <Switch>
                 {isLoggedIn ? (
                     <>
@@ -15,7 +15,7 @@ const Router = ({ isLoggedIn, user }) => {
                             <Home user={user} />
                         </Route>
                         <Route path="/profile" exact>
-                            <Profile user={user} />
+                            <Profile user={user} refreshUser={refreshUser}/>
                         </Route>
                     </>
                 ) : (
